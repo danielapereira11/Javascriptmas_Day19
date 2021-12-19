@@ -1,6 +1,6 @@
 const btn = document.getElementById("btn");
 const imageEl = document.querySelector("#foodHolder");
-let foodishUrl = "https://foodish-api.herokuapp.com/api/images/dessert";
+let foodishDesertUrl = "https://foodish-api.herokuapp.com/api/images/dessert";
 
 function findYum(response) {
   imageEl.innerHTML = `<img src="${response.data.image}" alt="random dessert image" width="500" height="500">`;
