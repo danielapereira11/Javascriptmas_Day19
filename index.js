@@ -7,7 +7,7 @@ function findYum(response) {
 }
 
 function gettingFoodishApi() {
-  axios.get(foodishUrl).then(findYum);
+  axios.get(foodishDesertUrl).then(findYum);
 }
 
 btn.addEventListener("click", gettingFoodishApi);
