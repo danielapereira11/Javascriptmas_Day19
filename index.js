@@ -1,13 +1,17 @@
 const btn = document.getElementById("btn");
 const imageEl = document.querySelector("#foodHolder");
-let foodishDesertUrl = "https://foodish-api.herokuapp.com/api/images/dessert";
+let foodishDessertUrl = "https://foodish-api.herokuapp.com/api/images/dessert";
 
 function findYum(response) {
-  imageEl.innerHTML = `<img src="${response.data.image}" alt="random dessert image" width="500" height="500">`;
+  let randomDessert = response.data.image;
+  imageEl.innerHTML += `<img src="${randomDessert}" alt="random dessert image">`;
 }
 
 function gettingFoodishApi() {
-  axios.get(foodishDesertUrl).then(findYum);
+  imageEl.innerHTML = "";
+  for (let i = 0; i < 4; i++) {
+    axios.get(foodishDessertUrl).then(findYum);
+  }
 }
 
 btn.addEventListener("click", gettingFoodishApi);
