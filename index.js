@@ -1,5 +1,16 @@
 const btn = document.getElementById("btn");
-// btn.addEventListener("click", findYum)
+const imageEl = document.querySelector("#foodHolder");
+let foodishUrl = "https://foodish-api.herokuapp.com/api/images/dessert";
+
+function findYum(response) {
+  imageEl.innerHTML = `<img src="${response.data.image}" alt="random dessert image" width="500" height="500">`;
+}
+
+function gettingFoodishApi() {
+  axios.get(foodishUrl).then(findYum);
+}
+
+btn.addEventListener("click", gettingFoodishApi);
 
 /* Task:
 Call the Foodish API (https://foodish-api.herokuapp.com/) and display random images of desserts on the click of a button.
